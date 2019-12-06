@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Juego - Acertar</title>
+
+
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- MODAL ACIERTO 1 -->
+
+<div class="modal fade" id="modal_unico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_titulo">JUGADOR 1</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modal_cuerpo">
+        Acertaste! Ahora le toca al Jugador 2.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL ACIERTO 2 -->
+
+<div class="modal fade" id="modal_acierto2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">JUGADOR 2</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="resultado_modal">
+        Acertaste!.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+	<h1>Acierta el número! </h1>
+	
+	<div class="row no-gutters">
+		
+		<div class="col-md-4">
+			<p>Genera un número aleatorio, luego elige uno del 0 al 99 hasta que aciertes.</p> 
+			<button onClick="generar();" class="btn-success" id="generar_numero">Generar Número</button>
+			<br/>
+			<input id="num_generado" type="text" name="num_generado" value="" disabled="true" />
+		</div>
+
+		<div class="col-md-8">
+			
+			<div class="row no-gutters">
+				
+				<div class="col-md-6" id="jugador1">
+					<h3>Jugador 1 </h3>
+					<input type="text" name="intentos1" value="0" id="c_intentos1" disabled="true" >
+					<br/>
+					<input type="password" name="elegido1"  maxlength="2" id="num_elegido1"/>
+					<br/>
+					<button name="acierta1" onClick="adivinar1();" id="acierta1" disabled="true">ACIERTA!</button>
+					
+					<div id="pista1">
+					</div>
+				</div>
+				
+
+				<div class="col-md-6" id="jugador2">
+					<h3 data-toggle="modal" data-target="#modal1">Jugador 2 </h3>
+					<input type="text" name="intentos2" value="0" id="c_intentos2" disabled="true">
+					<br/>
+					<input type="password" name="elegido2" maxlength="2" id="num_elegido2"/>
+					<br/>
+					<button name="acierta2" onClick="adivinar2();" id="acierta2" disabled="true">ACIERTA!</button>	
+					
+					<div id="pista2">
+					</div>
+
+				</div>
+			</div>
+
+			</div>
+		</div>
+
+		<div class="row no-gutters">
+			<button id="boton_reset" type="reset" name="reset" onClick="reset();">Jugar de nuevo</button>
+		</div>
+	
+
+
+	
+	
+	<script type="text/javascript" src="vendor/jquery/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="vendor/popper/popper.min.js"></script>
+	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript"src="js/acierta.js"></script>
+
+
+
+</body>
+</html>
